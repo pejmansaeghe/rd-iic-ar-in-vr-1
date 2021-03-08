@@ -44,5 +44,5 @@ jobs:
       - uses: actions/upload-artifact@v2.2.2
         with:
           name: ARinVR-${{ matrix.platform }}
-          path: build
+          path: ar-in-vr/Build
 
