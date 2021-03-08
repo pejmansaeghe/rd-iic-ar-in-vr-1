@@ -47,5 +47,5 @@ jobs:
         with:
           name: ARinVR-${{ matrix.platform }}
           path: builds/
-          error: File not found
+          if-no-files-found: error
 
