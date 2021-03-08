@@ -2623,7 +2623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &960123361
 Transform:
   m_ObjectHideFlags: 0
@@ -2946,10 +2946,10 @@ MonoBehaviour:
   m_PositionAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Position
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 98894a30-f3bc-4c38-a72b-edd6f15e278f
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2957,10 +2957,10 @@ MonoBehaviour:
   m_RotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 92369f59-d63b-45b7-ba99-9a6fbde9cc57
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2968,10 +2968,10 @@ MonoBehaviour:
   m_SelectAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Select
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: eaba3533-6492-4ece-83e1-5a303e759824
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2979,10 +2979,10 @@ MonoBehaviour:
   m_ActivateAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Activate
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 9b8fd16a-ffc8-4237-aa7e-e8bbf47da9e4
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2990,10 +2990,10 @@ MonoBehaviour:
   m_UIPressAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Press
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: c9404adf-cee3-4a46-b7c1-f1214477c887
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3001,10 +3001,10 @@ MonoBehaviour:
   m_HapticDeviceAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Haptic Device
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: d18e1754-e358-4d15-b3ae-bb8b4e60ad17
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3012,10 +3012,10 @@ MonoBehaviour:
   m_RotateAnchorAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Rotate Anchor
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 4671737a-3587-4fdd-a6ff-fc73290f873e
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3023,10 +3023,10 @@ MonoBehaviour:
   m_TranslateAnchorAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Translate Anchor
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: b811784b-e3d7-4fa8-916e-4965bc488920
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -5358,7 +5358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1817520437
 Transform:
   m_ObjectHideFlags: 0
