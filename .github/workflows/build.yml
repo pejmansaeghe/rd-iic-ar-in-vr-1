@@ -1,0 +1,48 @@
+name: Master Branch - Build
+
+on: [workflow_dispatch]
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  build:
+    name: Build my project
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [StandaloneWindows64, StandaloneLinux64]
+
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: ar-in-vr/Library
+          key: Library-${{ matrix.platform }}
+          restore-keys: |
+            Library-
+
+      # Test
+      #- name: Run tests
+
+      # Build
+      - name: Build project
+        uses: webbertakken/unity-builder@v0.10
+        with:
+          unityVersion: 2019.4.9f1
+          targetPlatform: ${{ matrix.platform }}
+          buildName: ARinVR-${{ matrix.platform }}
+
+      # Output
+      - uses: actions/upload-artifact@v2.2.2
+        with:
+          name: ARinVR-${{ matrix.platform }}
+          path: build
+
