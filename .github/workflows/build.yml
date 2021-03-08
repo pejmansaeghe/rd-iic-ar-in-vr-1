@@ -38,11 +38,13 @@ jobs:
         with:
           unityVersion: 2019.4.9f1
           targetPlatform: ${{ matrix.platform }}
-          buildName: ARinVR-${{ matrix.platform }}
+          projectPath: ar_in_vr
+          buildName: ar_in_vr/Build/ARinVR-${{ matrix.platform }}
 
       # Output
       - uses: actions/upload-artifact@v2.2.2
         with:
           name: ARinVR-${{ matrix.platform }}
           path: ar_in_vr/Build
+          error: File not found
 
