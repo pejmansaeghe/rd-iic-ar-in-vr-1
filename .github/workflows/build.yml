@@ -24,7 +24,7 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: ar-in-vr/Library
+          path: ar_in_vr/Library
           key: Library-${{ matrix.platform }}
           restore-keys: |
             Library-
@@ -44,5 +44,5 @@ jobs:
       - uses: actions/upload-artifact@v2.2.2
         with:
           name: ARinVR-${{ matrix.platform }}
-          path: ar-in-vr/Build
+          path: ar_in_vr/Build
 
