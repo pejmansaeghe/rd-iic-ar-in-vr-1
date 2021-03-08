@@ -46,6 +46,6 @@ jobs:
       - uses: actions/upload-artifact@v2.2.2
         with:
           name: ARinVR-${{ matrix.platform }}
-          path: ar_in_vr/Build
+          path: builds/
           error: File not found
 
