@@ -21,7 +21,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - Alpha: 0.6
+    - HorizontalEdge: 0.2
     - Vector1_382EDB3E: 0.81
     - Vector1_E071B34B: 0.2
     - Vector1_ECD98D96: 0.2
+    - VerticalEdge: 0.2
     m_Colors: []
