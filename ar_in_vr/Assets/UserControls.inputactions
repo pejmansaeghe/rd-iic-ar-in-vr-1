@@ -141,6 +141,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "af50fe62-df43-4984-bf17-b963659b0a8b",
+            "actions": [
+                {
+                    "name": "UI Button Click",
+                    "type": "Button",
+                    "id": "8a1196e9-d5a7-4280-a378-b82c2f3c37b3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f1eb7197-4ce7-4e8b-9beb-696be77c1912",
+                    "path": "<ViveWand>/triggerPressed",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Button Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

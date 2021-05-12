@@ -8,12 +8,21 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ExperimentRoom.unity
     guid: 8d57dc27ca4f80e47a5df21caf801005
   - enabled: 0
     path: Assets/Scenes/TestScenes/XRInteraction.unity
     guid: add450f3ecff9314e9ab523b4ab0bf7a
+  - enabled: 1
+    path: Assets/Pejman/Scenes/BasicUI.unity
+    guid: 7e24744d80fab4b47a3c43ccaf222d23
+  - enabled: 1
+    path: Assets/Pejman/Scenes/BasicVideo.unity
+    guid: 422537b15e2ccdd4e8e0d587f8b26188
+  - enabled: 1
+    path: Assets/Pejman/Scenes/Test.unity
+    guid: 6c5edda0fe15a30469eff0a73d17baf4
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f6bf2ee1d3b5ab34fa6ba32e1e8f823b,
       type: 2}
