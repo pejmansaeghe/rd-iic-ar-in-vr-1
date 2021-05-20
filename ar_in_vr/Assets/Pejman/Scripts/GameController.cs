@@ -19,11 +19,6 @@ public class GameController : MonoBehaviour
     {
         animator = turtle.GetComponent<Animator>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -36,9 +31,4 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StopMovingForward()
-    {
-        animator.SetBool("IsMovingForward", false);
-        Debug.Log("Stop Moving Towards Viewer");
-    }
 }
