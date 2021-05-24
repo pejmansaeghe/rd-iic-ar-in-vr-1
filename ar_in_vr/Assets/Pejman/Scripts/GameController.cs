@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private GameObject turtle;
+
+    [SerializeField]
+    private int startAnimFrame = 50;
+
     private Animator animator;
 
     private void Awake()
@@ -23,12 +27,24 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(videoPlayer.frame);
-        if(videoPlayer.frame > 50)
+        if(videoPlayer.frame > startAnimFrame)
         {
             animator.SetBool("IsSwimming", true);
             animator.SetBool("IsMovingForward", true);
         }
+        if(turtle.transform.position.y < 0.7f)
+        {
+            animator.SetBool("Land", true);
+        }
+        if (turtle.transform.position.y < 0.48f)
+        {
+            animator.SetBool("Landed", true);
+        }
+        if (turtle.transform.localRotation.eulerAngles.y < 100f)
+        {
+            animator.SetBool("StopMoving", true);
+        }
+
     }
 
 }
