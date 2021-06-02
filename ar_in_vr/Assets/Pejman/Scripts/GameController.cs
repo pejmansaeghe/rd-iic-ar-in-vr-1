@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(videoPlayer.frame);
         if(videoPlayer.frame > startAnimFrame)
         {
             animator.SetBool("IsSwimming", true);
@@ -36,7 +37,7 @@ public class GameController : MonoBehaviour
         {
             animator.SetBool("Land", true);
         }
-        if (turtle.transform.position.y < 0.48f)
+        if (turtle.transform.position.y < 0.49f) 
         {
             animator.SetBool("Landed", true);
         }
