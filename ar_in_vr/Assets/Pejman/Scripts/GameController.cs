@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
     private GameObject turtle;
 
     [SerializeField]
+    private bool perpetual = false;
+
+    [SerializeField]
     private int startAnimFrame = 50;
 
     private Animator animator;
@@ -31,19 +34,30 @@ public class GameController : MonoBehaviour
         if(videoPlayer.frame > startAnimFrame)
         {
             animator.SetBool("IsSwimming", true);
-            animator.SetBool("IsMovingForward", true);
+            if (perpetual)
+            {
+                animator.SetBool("Perpetual", true);
+            }
+            else
+            {
+                animator.SetBool("TowardsTable", true);
+            }
         }
-        if(turtle.transform.position.y < 0.7f)
+        if(turtle.transform.position.y < 0.55f)
         {
             animator.SetBool("Land", true);
         }
-        if (turtle.transform.position.y < 0.49f) 
-        {
-            animator.SetBool("Landed", true);
-        }
-        if (turtle.transform.localRotation.eulerAngles.y < 100f)
+        //if (turtle.transform.position.y < 0.49f) 
+        //{
+        //    animator.SetBool("Landed", true);
+        //}
+        if (turtle.transform.position.y < 0.412f)
         {
             animator.SetBool("StopMoving", true);
+        }
+        if (videoPlayer.frame > 912)
+        {
+            animator.enabled = false;
         }
 
     }
