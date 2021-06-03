@@ -1676,6 +1676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenSeaTurtle
       objectReference: {fileID: 0}
+    - target: {fileID: 160046, guid: 94d357dc6311f44fbaac95d8f64cc36d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400834, guid: 94d357dc6311f44fbaac95d8f64cc36d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 6.0022106
@@ -3151,7 +3155,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723342928}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 5d9ab296509fcd246bcf88b507227d5a, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -7184,8 +7188,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 723342931}
   turtle: {fileID: 1467918665}
-  perpetual: 1
-  startAnimFrame: 200
+  participantNumber: 1
+  clips:
+  - {fileID: 32900000, guid: 906d41958603f494d9ff28e90b7c9a74, type: 3}
+  - {fileID: 32900000, guid: 5d9ab296509fcd246bcf88b507227d5a, type: 3}
+  - {fileID: 32900000, guid: ed12229bfd073f247abe82fb6d47e4a3, type: 3}
+  - {fileID: 32900000, guid: 7d56903097bdd994c9b5f84000a28c58, type: 3}
+  - {fileID: 32900000, guid: 2dd927bb4e2bb5542adf8c8098ea4414, type: 3}
+  - {fileID: 32900000, guid: 1f003114596488c4aacb07c83b535098, type: 3}
+  startAnimFrame: 50
 --- !u!4 &2085419113
 Transform:
   m_ObjectHideFlags: 0
