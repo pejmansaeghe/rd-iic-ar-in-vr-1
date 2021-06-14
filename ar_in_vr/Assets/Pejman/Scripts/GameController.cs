@@ -22,9 +22,9 @@ public class GameController : MonoBehaviour
     private Animator animator;
     // decides which video and animation will be played next; starts from 0 and goes up to 5
     private int index = 0;
-    enum Movement {Perpetual, TowardsTable};
+    enum Movement { Perpetual, TowardsTable };
     private Movement movement;
-    enum StartingPoint { WithinTV, AdjacentTV, OutsideFoV};
+    enum StartingPoint { WithinTV, AdjacentTV, OutsideFoV };
     private StartingPoint startingPoint;
 
     private Vector3 withinTVStartPos;
@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     // oder of conditions (columns) in each Latin square row 
     private int[] conditionOrder = new int[6];
 
+    UserControls userControls;
     private void Awake()
     {
         animator = turtle.GetComponent<Animator>();
@@ -50,6 +51,14 @@ public class GameController : MonoBehaviour
 
         turtle.SetActive(false);
         canvas.SetActive(true);
+
+        userControls = new UserControls();
+
+        userControls.Debug.PlayNextVideoSequence.performed += _ =>
+        {
+            Debug.Log("PlayNextVideoSequence");
+            PlayNextCondition();
+        };
     }
     private void Start()
     {
@@ -60,6 +69,16 @@ public class GameController : MonoBehaviour
         videoPlayer.clip = clips[index];
         videoPlayer.loopPointReached += EndReached;
         SetAnimation(index);
+    }
+
+    void OnEnable()
+    {
+        userControls.Debug.Enable();
+    }
+
+    void OnDisable()
+    {
+        userControls.Debug.Disable();
     }
     void EndReached(VideoPlayer vp)
     {

@@ -168,6 +168,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Debug",
+            "id": "9cc28a41-3fd2-4fb9-b3c5-637d80d652b9",
+            "actions": [
+                {
+                    "name": "PlayNextVideoSequence",
+                    "type": "Button",
+                    "id": "9295fbbf-f28c-4baf-9621-3d8218a2e927",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "190dd12b-d96f-45ea-bc3b-244790a1d067",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayNextVideoSequence",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
