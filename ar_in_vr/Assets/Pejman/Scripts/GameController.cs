@@ -6,6 +6,8 @@ using UnityEngine.Video;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
+    private GameObject canvas;
+    [SerializeField]
     private VideoPlayer videoPlayer;
     [SerializeField]
     private GameObject turtle;
@@ -45,6 +47,9 @@ public class GameController : MonoBehaviour
         conditions.Add(Condition_4);
         conditions.Add(Condition_5);
         conditions.Add(Condition_6);
+
+        turtle.SetActive(false);
+        canvas.SetActive(true);
     }
     private void Start()
     {
@@ -52,11 +57,8 @@ public class GameController : MonoBehaviour
         adjacentTVStartPos = new Vector3(8f, 1.2f, 0);
         outsideFoVStartPos = new Vector3(9.392f, 3.2f, 0);
 
-        turtle.SetActive(false);
-
         videoPlayer.clip = clips[index];
         videoPlayer.loopPointReached += EndReached;
-
         SetAnimation(index);
     }
     void EndReached(VideoPlayer vp)
@@ -64,11 +66,12 @@ public class GameController : MonoBehaviour
         // after each videos 1 to 5 do the following
         animator.enabled = false;
         turtle.SetActive(false);
+        canvas.SetActive(true);
         if (index < clips.Length)
         {
             index++;
             vp.clip = clips[index];
-            vp.Play();
+            //vp.Play();
             SetAnimation(index);
         }
         // at the end of video 6 (the last video) execute the code below
@@ -77,6 +80,14 @@ public class GameController : MonoBehaviour
             turtle.SetActive(false);
             vp.Stop();
         }
+    }
+    /// <summary>
+    /// UI button triggers this function
+    /// </summary>
+    public void PlayNextCondition()
+    {
+        canvas.SetActive(false);
+        videoPlayer.Play();
     }
     /// <summary>
     /// Set animation based on participant number; only 6 unique rows in the Latin square; participant 7 in the study will see what participant 1 saw.
@@ -274,5 +285,10 @@ public class GameController : MonoBehaviour
         startingPoint = StartingPoint.OutsideFoV;
         movement = Movement.Perpetual;
     }
-    //todo: add UI to the scene; load UI after each video ends, and play next video/animation when UI button clicked.
+    //todo: canvas taxt should change for each condition, e.g. before a clip it should say "please press Next to watch", after clip
+    // it should say "please remove HMD and speak to the moderator" this may change into the former message using a time (e.g. after 
+    // 30 seconds).
+    //todo: videoplayer should render a black screen when not playing (between clips)
+    //todo: turtle too shiny
+    //todo: end of final video turtle doesn't disappear. why?
 }
