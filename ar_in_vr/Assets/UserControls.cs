@@ -193,6 +193,14 @@ public class @UserControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""TriggerPath"",
+                    ""type"": ""Button"",
+                    ""id"": ""0784f02e-f0c9-4d86-8738-1697a7131be1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -204,6 +212,17 @@ public class @UserControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PlayNextVideoSequence"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab9e22b7-cf28-4edb-a949-9461cf6b9d02"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TriggerPath"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -227,6 +246,7 @@ public class @UserControls : IInputActionCollection, IDisposable
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_PlayNextVideoSequence = m_Debug.FindAction("PlayNextVideoSequence", throwIfNotFound: true);
+        m_Debug_TriggerPath = m_Debug.FindAction("TriggerPath", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -391,11 +411,13 @@ public class @UserControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Debug;
     private IDebugActions m_DebugActionsCallbackInterface;
     private readonly InputAction m_Debug_PlayNextVideoSequence;
+    private readonly InputAction m_Debug_TriggerPath;
     public struct DebugActions
     {
         private @UserControls m_Wrapper;
         public DebugActions(@UserControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @PlayNextVideoSequence => m_Wrapper.m_Debug_PlayNextVideoSequence;
+        public InputAction @TriggerPath => m_Wrapper.m_Debug_TriggerPath;
         public InputActionMap Get() { return m_Wrapper.m_Debug; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -408,6 +430,9 @@ public class @UserControls : IInputActionCollection, IDisposable
                 @PlayNextVideoSequence.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnPlayNextVideoSequence;
                 @PlayNextVideoSequence.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnPlayNextVideoSequence;
                 @PlayNextVideoSequence.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnPlayNextVideoSequence;
+                @TriggerPath.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnTriggerPath;
+                @TriggerPath.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnTriggerPath;
+                @TriggerPath.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnTriggerPath;
             }
             m_Wrapper.m_DebugActionsCallbackInterface = instance;
             if (instance != null)
@@ -415,6 +440,9 @@ public class @UserControls : IInputActionCollection, IDisposable
                 @PlayNextVideoSequence.started += instance.OnPlayNextVideoSequence;
                 @PlayNextVideoSequence.performed += instance.OnPlayNextVideoSequence;
                 @PlayNextVideoSequence.canceled += instance.OnPlayNextVideoSequence;
+                @TriggerPath.started += instance.OnTriggerPath;
+                @TriggerPath.performed += instance.OnTriggerPath;
+                @TriggerPath.canceled += instance.OnTriggerPath;
             }
         }
     }
@@ -436,5 +464,6 @@ public class @UserControls : IInputActionCollection, IDisposable
     public interface IDebugActions
     {
         void OnPlayNextVideoSequence(InputAction.CallbackContext context);
+        void OnTriggerPath(InputAction.CallbackContext context);
     }
 }

@@ -180,6 +180,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TriggerPath",
+                    "type": "Button",
+                    "id": "0784f02e-f0c9-4d86-8738-1697a7131be1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -191,6 +199,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "PlayNextVideoSequence",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab9e22b7-cf28-4edb-a949-9461cf6b9d02",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerPath",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
