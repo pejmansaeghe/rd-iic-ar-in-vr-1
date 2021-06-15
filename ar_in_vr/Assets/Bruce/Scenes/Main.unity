@@ -2119,7 +2119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391993726}
   m_LocalRotation: {x: 0.053537715, y: 0.9120099, z: -0.40665916, w: 0}
-  m_LocalPosition: {x: 9.392, y: 1.2, z: 0}
+  m_LocalPosition: {x: 9.333, y: 1.179, z: 1.303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 391749798}
@@ -3359,7 +3359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 160046, guid: 94d357dc6311f44fbaac95d8f64cc36d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400834, guid: 94d357dc6311f44fbaac95d8f64cc36d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6381,12 +6381,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464820338}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1467918665 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 160046, guid: 94d357dc6311f44fbaac95d8f64cc36d,
-    type: 3}
-  m_PrefabInstance: {fileID: 413277242}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468549450
 GameObject:
   m_ObjectHideFlags: 0
@@ -6597,8 +6591,8 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 0.14643002, y: -0.14380765, z: 2.7456756}
-      - {x: 0.095267296, y: -0.3124801, z: 2.498447}
+      - {x: 0.14643002, y: 0.2582593, z: 2.7456756}
+      - {x: 0.095267296, y: 0.089586854, z: 2.498447}
       - {x: 0.16469574, y: -0.72684836, z: 1.0952795}
       - {x: 0.27839088, y: -0.7444776, z: 0.5964737}
       isClosed: 0
@@ -6614,7 +6608,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 99
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -7910,7 +7904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 558325351}
   videoPlayer: {fileID: 723342931}
-  turtle: {fileID: 1467918665}
+  turtleController: {fileID: 391993727}
   LatinRow: 1
   clips:
   - {fileID: 32900000, guid: 3c221892fb4099a46bc629dc7d6137ea, type: 3}

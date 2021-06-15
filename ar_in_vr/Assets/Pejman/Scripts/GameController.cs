@@ -9,8 +9,10 @@ public class GameController : MonoBehaviour
     private GameObject canvas;
     [SerializeField]
     private VideoPlayer videoPlayer;
-    [SerializeField]
+
+    public TurtleController turtleController;
     private GameObject turtle;
+
     [Range(1, 6)]
     [SerializeField]
     private int LatinRow; // don't change while in Play mode
@@ -19,7 +21,6 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private int startAnimFrame = 50;
 
-    private Animator animator;
     // decides which video and animation will be played next; starts from 0 and goes up to 5
     private int index = 0;
     enum Movement { Perpetual, TowardsTable };
@@ -40,7 +41,6 @@ public class GameController : MonoBehaviour
     UserControls userControls;
     private void Awake()
     {
-        animator = turtle.GetComponent<Animator>();
         // add all 6 conditions to a list called conditions 
         conditions.Add(Condition_1);
         conditions.Add(Condition_2);
@@ -49,7 +49,9 @@ public class GameController : MonoBehaviour
         conditions.Add(Condition_5);
         conditions.Add(Condition_6);
 
-        turtle.SetActive(false);
+        turtle = turtleController.gameObject;
+
+        //turtle.SetActive(false);
         canvas.SetActive(true);
 
         userControls = new UserControls();
@@ -83,7 +85,6 @@ public class GameController : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         // after each videos 1 to 5 do the following
-        animator.enabled = false;
         turtle.SetActive(false);
         canvas.SetActive(true);
         if (index < clips.Length)
@@ -107,6 +108,9 @@ public class GameController : MonoBehaviour
     {
         canvas.SetActive(false);
         videoPlayer.Play();
+
+        turtle.SetActive(true);
+        turtleController.StartPathIndex(index);
     }
     /// <summary>
     /// Set animation based on participant number; only 6 unique rows in the Latin square; participant 7 in the study will see what participant 1 saw.
@@ -115,7 +119,6 @@ public class GameController : MonoBehaviour
     /// </summary>
     void SetAnimation(int index)
     {
-        animator.enabled = true;
         int condition_ind;
         switch (LatinRow)
         {
@@ -195,6 +198,7 @@ public class GameController : MonoBehaviour
     }
     void Update()
     {
+        /*
         if (videoPlayer.frame > startAnimFrame)
         {
             turtle.SetActive(true);
@@ -243,6 +247,7 @@ public class GameController : MonoBehaviour
             }
 
         }
+        */
     }
     /// <summary>
     /// Starting point: Within TV screen, movement: towards the viewer and resting in front of them
