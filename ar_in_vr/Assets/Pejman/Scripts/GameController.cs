@@ -23,14 +23,6 @@ public class GameController : MonoBehaviour
 
     // decides which video and animation will be played next; starts from 0 and goes up to 5
     private int index = 0;
-    enum Movement { Perpetual, TowardsTable };
-    private Movement movement;
-    enum StartingPoint { WithinTV, AdjacentTV, OutsideFoV };
-    private StartingPoint startingPoint;
-
-    private Vector3 withinTVStartPos;
-    private Vector3 adjacentTVStartPos;
-    private Vector3 outsideFoVStartPos;
 
     delegate void Condition();
     List<Condition> conditions = new List<Condition>();
@@ -41,13 +33,6 @@ public class GameController : MonoBehaviour
     UserControls userControls;
     private void Awake()
     {
-        // add all 6 conditions to a list called conditions 
-        conditions.Add(Condition_1);
-        conditions.Add(Condition_2);
-        conditions.Add(Condition_3);
-        conditions.Add(Condition_4);
-        conditions.Add(Condition_5);
-        conditions.Add(Condition_6);
 
         turtle = turtleController.gameObject;
 
@@ -64,10 +49,6 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-        withinTVStartPos = new Vector3(9.392f, 1.2f, 0);
-        adjacentTVStartPos = new Vector3(8f, 1.2f, 0);
-        outsideFoVStartPos = new Vector3(9.392f, 3.2f, 0);
-
         videoPlayer.clip = clips[index];
         videoPlayer.loopPointReached += EndReached;
         SetAnimation(index);
@@ -196,119 +177,7 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
-    void Update()
-    {
-        /*
-        if (videoPlayer.frame > startAnimFrame)
-        {
-            turtle.SetActive(true);
-            animator.SetBool("IsSwimming", true);
-            switch (movement)
-            {
-                case Movement.Perpetual:
-                    animator.SetBool("Perpetual", true);
-                    switch (startingPoint)
-                    {
-                        case StartingPoint.WithinTV:
-                            animator.SetBool("WithinTV", true);
-                            break;
-                        case StartingPoint.AdjacentTV:
-                            animator.SetBool("AdjacentTV", true);
-                            break;
-                        case StartingPoint.OutsideFoV:
-                            animator.SetBool("OutsideFoV", true);
-                            break;
-                    }
-                    break;
-                case Movement.TowardsTable:
-                    animator.SetBool("TowardsTable", true);
-                    switch (startingPoint)
-                    {
-                        case StartingPoint.WithinTV:
-                            animator.SetBool("WithinTV", true);
-                            break;
-                        case StartingPoint.AdjacentTV:
-                            animator.SetBool("AdjacentTV", true);
-                            break;
-                        case StartingPoint.OutsideFoV:
-                            animator.SetBool("OutsideFoV", true);
-                            break;
-                    }
 
-                    if (turtle.transform.position.y < 0.55f)
-                    {
-                        animator.SetBool("Land", true);
-                    }
-                    if (turtle.transform.position.y < 0.412f)
-                    {
-                        animator.SetBool("StopMoving", true);
-                    }
-                    break;
-            }
-
-        }
-        */
-    }
-    /// <summary>
-    /// Starting point: Within TV screen, movement: towards the viewer and resting in front of them
-    /// </summary>
-    void Condition_1()
-    {
-        Quaternion rotation = Quaternion.Euler(0, 180, 0);
-        turtle.transform.SetPositionAndRotation(withinTVStartPos, rotation);
-        startingPoint = StartingPoint.WithinTV;
-        movement = Movement.TowardsTable;
-    }
-    /// <summary>
-    /// Starting point: Within TV screen, movement: perpetual movement across field of view
-    /// </summary>
-    void Condition_2()
-    {
-        Quaternion rotation = Quaternion.Euler(0, 165, 0);
-        turtle.transform.SetPositionAndRotation(withinTVStartPos, rotation);
-        startingPoint = StartingPoint.WithinTV;
-        movement = Movement.Perpetual;
-    }
-    /// <summary>
-    /// Starting point: Adjacent to TV, movement: towards the viewer and resting in front of them
-    /// </summary>
-    void Condition_3()
-    {
-        Quaternion rotation = Quaternion.Euler(0, 140, 0);
-        turtle.transform.SetPositionAndRotation(adjacentTVStartPos, rotation);
-        startingPoint = StartingPoint.AdjacentTV;
-        movement = Movement.TowardsTable;
-    }
-    /// <summary>
-    /// Starting point: Adjacent to TV, movement: perpetual movement
-    /// </summary>
-    void Condition_4()
-    {
-        Quaternion rotation = Quaternion.Euler(0, 140, 0);
-        turtle.transform.SetPositionAndRotation(adjacentTVStartPos, rotation);
-        startingPoint = StartingPoint.AdjacentTV;
-        movement = Movement.Perpetual;
-    }
-    /// <summary>
-    /// Starting point: Outside fov, movement: towards the viewer and resting in front of them
-    /// </summary>
-    void Condition_5()
-    {
-        Quaternion rotation = Quaternion.Euler(50, 180, 0);
-        turtle.transform.SetPositionAndRotation(outsideFoVStartPos, rotation);
-        startingPoint = StartingPoint.OutsideFoV;
-        movement = Movement.TowardsTable;
-    }
-    /// <summary>
-    /// Starting point: Outside fov, movement: perpetual movement across field of view
-    /// </summary>
-    void Condition_6()
-    {
-        Quaternion rotation = Quaternion.Euler(50, 165, 0);
-        turtle.transform.SetPositionAndRotation(outsideFoVStartPos, rotation);
-        startingPoint = StartingPoint.OutsideFoV;
-        movement = Movement.Perpetual;
-    }
     //todo: canvas taxt should change for each condition, e.g. before a clip it should say "please press Next to watch", after clip
     // it should say "please remove HMD and speak to the moderator" this may change into the former message using a time (e.g. after 
     // 30 seconds).
