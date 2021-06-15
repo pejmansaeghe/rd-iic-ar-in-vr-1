@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
 using PathCreation.Examples;
+using System;
 
 [RequireComponent(typeof(PathFollower))]
 [RequireComponent(typeof(Animator))]
@@ -15,6 +16,10 @@ public class TurtleController : MonoBehaviour
     Animator animator;
 
     UserControls userControls;
+
+    Vector3 previousPosition;
+
+    bool followingPath = false;
 
     void Awake()
     {
@@ -30,6 +35,11 @@ public class TurtleController : MonoBehaviour
             StartPathIndex(0);
         };
 
+    }
+
+    private void TurtleAtEndOfPath()
+    {
+        Debug.Log("Turtle at end of path");
     }
 
     void OnEnable()
@@ -53,6 +63,21 @@ public class TurtleController : MonoBehaviour
         pathFollower.enabled = true;
         pathFollower.Reset();
         pathFollower.pathCreator = paths[idx];
+
+        previousPosition = transform.position;
+        followingPath = true;
+    }
+
+    void LateUpdate()
+    {
+        if (followingPath && Vector3.Distance(previousPosition, transform.position) < 1e-6)
+        {
+            Debug.Log("End of path reached");
+            followingPath = false;
+            animator.SetBool("TurtleIdle", true);
+        }
+
+        previousPosition = transform.position;
     }
 
     void OnTriggerEnter(Collider other)
