@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     List<Condition> conditions = new List<Condition>();
 
     // oder of conditions (columns) in each Latin square row 
-    private int[] conditionOrder = new int[6];
+    private int[] playOrder = new int[6];
 
     UserControls userControls;
     private void Awake()
@@ -49,9 +49,16 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-        videoPlayer.clip = clips[index];
+        index = 0;
         videoPlayer.loopPointReached += EndReached;
-        SetAnimation(index);
+
+        CreatePlayOrder();
+
+        Debug.Log("Sequence order: ");
+        foreach (int s in playOrder)
+        {
+            Debug.Log(s);
+        }
     }
 
     void OnEnable()
@@ -65,21 +72,11 @@ public class GameController : MonoBehaviour
     }
     void EndReached(VideoPlayer vp)
     {
-        // after each videos 1 to 5 do the following
         turtle.SetActive(false);
         canvas.SetActive(true);
-        if (index < clips.Length)
+        if (index >= clips.Length) //at end of the experiment
         {
-            index++;
-            vp.clip = clips[index];
-            //vp.Play();
-            SetAnimation(index);
-        }
-        // at the end of video 6 (the last video) execute the code below
-        else
-        {
-            turtle.SetActive(false);
-            vp.Stop();
+            videoPlayer.Stop();
         }
     }
     /// <summary>
@@ -88,92 +85,81 @@ public class GameController : MonoBehaviour
     public void PlayNextCondition()
     {
         canvas.SetActive(false);
+
+        Debug.Log("Playing Latin sequence: " + playOrder[index]);
+
+        int currentSequence = playOrder[index] - 1; // -1 because the Latin square values are not zero-referenced.
+
+        videoPlayer.clip = clips[currentSequence];
         videoPlayer.Play();
 
         turtle.SetActive(true);
-        turtleController.StartPathIndex(index);
+        turtleController.StartPathIndex(currentSequence);
+
+        index += 1;
     }
     /// <summary>
     /// Set animation based on participant number; only 6 unique rows in the Latin square; participant 7 in the study will see what participant 1 saw.
     /// If we decide to let participants input their number then we need function to map >6 numbers to a 1-6 range.
     /// Selects the correct animation sequence based on a Latin square (see study protocol)
     /// </summary>
-    void SetAnimation(int index)
+    void CreatePlayOrder()
     {
-        int condition_ind;
         switch (LatinRow)
         {
             case 1:
                 // set the columns in the first row 
-                conditionOrder[0] = 1;
-                conditionOrder[1] = 2;
-                conditionOrder[2] = 6;
-                conditionOrder[3] = 3;
-                conditionOrder[4] = 5;
-                conditionOrder[5] = 4;
-                // select the next animation sequence everytime SetAnimation is called, since the index gets added by one after each video
-                condition_ind = conditionOrder[index] - 1;
-                conditions[condition_ind]();
+                playOrder[0] = 1;
+                playOrder[1] = 2;
+                playOrder[2] = 6;
+                playOrder[3] = 3;
+                playOrder[4] = 5;
+                playOrder[5] = 4;
                 break;
             case 2:
                 // set the columns in the second row
-                conditionOrder[0] = 2;
-                conditionOrder[1] = 3;
-                conditionOrder[2] = 1;
-                conditionOrder[3] = 4;
-                conditionOrder[4] = 6;
-                conditionOrder[5] = 5;
-
-                condition_ind = conditionOrder[index] - 1;
-                conditions[condition_ind]();
+                playOrder[0] = 2;
+                playOrder[1] = 3;
+                playOrder[2] = 1;
+                playOrder[3] = 4;
+                playOrder[4] = 6;
+                playOrder[5] = 5;
                 break;
             case 3:
                 // set the columns in the third row
-                conditionOrder[0] = 3;
-                conditionOrder[1] = 4;
-                conditionOrder[2] = 2;
-                conditionOrder[3] = 5;
-                conditionOrder[4] = 1;
-                conditionOrder[5] = 6;
-
-                condition_ind = conditionOrder[index] - 1;
-                conditions[condition_ind]();
+                playOrder[0] = 3;
+                playOrder[1] = 4;
+                playOrder[2] = 2;
+                playOrder[3] = 5;
+                playOrder[4] = 1;
+                playOrder[5] = 6;
                 break;
             case 4:
                 // set the columns in the fourth row
-                conditionOrder[0] = 4;
-                conditionOrder[1] = 5;
-                conditionOrder[2] = 3;
-                conditionOrder[3] = 6;
-                conditionOrder[4] = 2;
-                conditionOrder[5] = 1;
-
-                condition_ind = conditionOrder[index] - 1;
-                conditions[condition_ind]();
+                playOrder[0] = 4;
+                playOrder[1] = 5;
+                playOrder[2] = 3;
+                playOrder[3] = 6;
+                playOrder[4] = 2;
+                playOrder[5] = 1;
                 break;
             case 5:
                 // set the columns in the fifth row
-                conditionOrder[0] = 5;
-                conditionOrder[1] = 6;
-                conditionOrder[2] = 4;
-                conditionOrder[3] = 1;
-                conditionOrder[4] = 3;
-                conditionOrder[5] = 2;
-
-                condition_ind = conditionOrder[index] - 1;
-                conditions[condition_ind]();
+                playOrder[0] = 5;
+                playOrder[1] = 6;
+                playOrder[2] = 4;
+                playOrder[3] = 1;
+                playOrder[4] = 3;
+                playOrder[5] = 2;
                 break;
             case 6:
                 // set the columns in the sixsth row
-                conditionOrder[0] = 6;
-                conditionOrder[1] = 1;
-                conditionOrder[2] = 5;
-                conditionOrder[3] = 2;
-                conditionOrder[4] = 4;
-                conditionOrder[5] = 3;
-
-                condition_ind = conditionOrder[index] - 1;
-                conditions[condition_ind]();
+                playOrder[0] = 6;
+                playOrder[1] = 1;
+                playOrder[2] = 5;
+                playOrder[3] = 2;
+                playOrder[4] = 4;
+                playOrder[5] = 3;
                 break;
         }
     }

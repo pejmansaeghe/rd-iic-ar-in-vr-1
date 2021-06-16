@@ -54,7 +54,6 @@ public class TurtleController : MonoBehaviour
 
     public void StartPathIndex(int idx)
     {
-        Debug.Log("TurtleController.StartPathIndex: " + idx);
         if (idx < 0 || idx >= paths.Length)
         {
             return;
