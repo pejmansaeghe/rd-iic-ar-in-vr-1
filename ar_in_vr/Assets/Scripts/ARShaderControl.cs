@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer))]
 public class ARShaderControl : MonoBehaviour
 {
 
@@ -10,21 +9,22 @@ public class ARShaderControl : MonoBehaviour
 
     public float ARFov = 45;
     public float ARAlpha = 0.8f;
-    MeshRenderer meshRenderer;
+    SkinnedMeshRenderer meshRenderer;
     Material arMaterial;
     Camera activeCamera;
     void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponent<SkinnedMeshRenderer>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        arMaterial = new Material(ARShader);
+        // arMaterial = new Material(ARShader);
 
-        meshRenderer.sharedMaterial = arMaterial;
+        // meshRenderer.sharedMaterial = arMaterial;
 
         activeCamera = Camera.main;
+        arMaterial = meshRenderer.material;
     }
 
     // Update is called once per frame

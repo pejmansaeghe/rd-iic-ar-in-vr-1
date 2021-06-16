@@ -1,157 +1,380 @@
 fileFormatVersion: 2
 guid: d9aea1ebab8e546c7a68046ef3ebd4fb
-timeCreated: 1459901851
-licenseType: Store
 ModelImporter:
-  serializedVersion: 18
-  fileIDToRecycleName:
-    100000: Calf_L
-    100002: Calf_L.001
-    100004: Calf_R
-    100006: Calf_R.001
-    100008: Eye_L
-    100010: Eye_R
-    100012: Finger_L.0
-    100014: Finger_L.001
-    100016: Finger_L.002
-    100018: Finger_R.0
-    100020: Finger_R.001
-    100022: Finger_R.002
-    100024: FirstEyelid_L
-    100026: FirstEyelid_R
-    100028: Foot_L
-    100030: Foot_L.001
-    100032: Foot_R
-    100034: Foot_R.001
-    100036: Forearm_L
-    100038: Forearm_L.001
-    100040: Forearm_R
-    100042: Forearm_R.001
-    100044: GreenSeaTurtle
-    100046: //RootNode
-    100048: Hand_L
-    100050: Hand_L.001
-    100052: Hand_R
-    100054: Hand_R.001
-    100056: Head
-    100058: Jaw
-    100060: Jaw.1
-    100062: Neck.1
-    100064: Neck.2
-    100066: Pelvis
-    100068: Root
-    100070: SecondEyelid_L
-    100072: SecondEyelid_R
-    100074: Spine
-    100076: Tail.1
-    100078: Toe_L.3
-    100080: Toe_R.3
-    100082: Tongue.1
-    100084: Tongue.3
-    100086: UpperArm_L
-    100088: UpperArm_R
-    400000: Calf_L
-    400002: Calf_L.001
-    400004: Calf_R
-    400006: Calf_R.001
-    400008: Eye_L
-    400010: Eye_R
-    400012: Finger_L.0
-    400014: Finger_L.001
-    400016: Finger_L.002
-    400018: Finger_R.0
-    400020: Finger_R.001
-    400022: Finger_R.002
-    400024: FirstEyelid_L
-    400026: FirstEyelid_R
-    400028: Foot_L
-    400030: Foot_L.001
-    400032: Foot_R
-    400034: Foot_R.001
-    400036: Forearm_L
-    400038: Forearm_L.001
-    400040: Forearm_R
-    400042: Forearm_R.001
-    400044: GreenSeaTurtle
-    400046: //RootNode
-    400048: Hand_L
-    400050: Hand_L.001
-    400052: Hand_R
-    400054: Hand_R.001
-    400056: Head
-    400058: Jaw
-    400060: Jaw.1
-    400062: Neck.1
-    400064: Neck.2
-    400066: Pelvis
-    400068: Root
-    400070: SecondEyelid_L
-    400072: SecondEyelid_R
-    400074: Spine
-    400076: Tail.1
-    400078: Toe_L.3
-    400080: Toe_R.3
-    400082: Tongue.1
-    400084: Tongue.3
-    400086: UpperArm_L
-    400088: UpperArm_R
-    4300000: GreenSeaTurtle
-    9500000: //RootNode
-    13700000: GreenSeaTurtle
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Calf_L
+  - first:
+      1: 100002
+    second: Calf_L.001
+  - first:
+      1: 100004
+    second: Calf_R
+  - first:
+      1: 100006
+    second: Calf_R.001
+  - first:
+      1: 100008
+    second: Eye_L
+  - first:
+      1: 100010
+    second: Eye_R
+  - first:
+      1: 100012
+    second: Finger_L.0
+  - first:
+      1: 100014
+    second: Finger_L.001
+  - first:
+      1: 100016
+    second: Finger_L.002
+  - first:
+      1: 100018
+    second: Finger_R.0
+  - first:
+      1: 100020
+    second: Finger_R.001
+  - first:
+      1: 100022
+    second: Finger_R.002
+  - first:
+      1: 100024
+    second: FirstEyelid_L
+  - first:
+      1: 100026
+    second: FirstEyelid_R
+  - first:
+      1: 100028
+    second: Foot_L
+  - first:
+      1: 100030
+    second: Foot_L.001
+  - first:
+      1: 100032
+    second: Foot_R
+  - first:
+      1: 100034
+    second: Foot_R.001
+  - first:
+      1: 100036
+    second: Forearm_L
+  - first:
+      1: 100038
+    second: Forearm_L.001
+  - first:
+      1: 100040
+    second: Forearm_R
+  - first:
+      1: 100042
+    second: Forearm_R.001
+  - first:
+      1: 100044
+    second: GreenSeaTurtle
+  - first:
+      1: 100046
+    second: //RootNode
+  - first:
+      1: 100048
+    second: Hand_L
+  - first:
+      1: 100050
+    second: Hand_L.001
+  - first:
+      1: 100052
+    second: Hand_R
+  - first:
+      1: 100054
+    second: Hand_R.001
+  - first:
+      1: 100056
+    second: Head
+  - first:
+      1: 100058
+    second: Jaw
+  - first:
+      1: 100060
+    second: Jaw.1
+  - first:
+      1: 100062
+    second: Neck.1
+  - first:
+      1: 100064
+    second: Neck.2
+  - first:
+      1: 100066
+    second: Pelvis
+  - first:
+      1: 100068
+    second: Root
+  - first:
+      1: 100070
+    second: SecondEyelid_L
+  - first:
+      1: 100072
+    second: SecondEyelid_R
+  - first:
+      1: 100074
+    second: Spine
+  - first:
+      1: 100076
+    second: Tail.1
+  - first:
+      1: 100078
+    second: Toe_L.3
+  - first:
+      1: 100080
+    second: Toe_R.3
+  - first:
+      1: 100082
+    second: Tongue.1
+  - first:
+      1: 100084
+    second: Tongue.3
+  - first:
+      1: 100086
+    second: UpperArm_L
+  - first:
+      1: 100088
+    second: UpperArm_R
+  - first:
+      4: 400000
+    second: Calf_L
+  - first:
+      4: 400002
+    second: Calf_L.001
+  - first:
+      4: 400004
+    second: Calf_R
+  - first:
+      4: 400006
+    second: Calf_R.001
+  - first:
+      4: 400008
+    second: Eye_L
+  - first:
+      4: 400010
+    second: Eye_R
+  - first:
+      4: 400012
+    second: Finger_L.0
+  - first:
+      4: 400014
+    second: Finger_L.001
+  - first:
+      4: 400016
+    second: Finger_L.002
+  - first:
+      4: 400018
+    second: Finger_R.0
+  - first:
+      4: 400020
+    second: Finger_R.001
+  - first:
+      4: 400022
+    second: Finger_R.002
+  - first:
+      4: 400024
+    second: FirstEyelid_L
+  - first:
+      4: 400026
+    second: FirstEyelid_R
+  - first:
+      4: 400028
+    second: Foot_L
+  - first:
+      4: 400030
+    second: Foot_L.001
+  - first:
+      4: 400032
+    second: Foot_R
+  - first:
+      4: 400034
+    second: Foot_R.001
+  - first:
+      4: 400036
+    second: Forearm_L
+  - first:
+      4: 400038
+    second: Forearm_L.001
+  - first:
+      4: 400040
+    second: Forearm_R
+  - first:
+      4: 400042
+    second: Forearm_R.001
+  - first:
+      4: 400044
+    second: GreenSeaTurtle
+  - first:
+      4: 400046
+    second: //RootNode
+  - first:
+      4: 400048
+    second: Hand_L
+  - first:
+      4: 400050
+    second: Hand_L.001
+  - first:
+      4: 400052
+    second: Hand_R
+  - first:
+      4: 400054
+    second: Hand_R.001
+  - first:
+      4: 400056
+    second: Head
+  - first:
+      4: 400058
+    second: Jaw
+  - first:
+      4: 400060
+    second: Jaw.1
+  - first:
+      4: 400062
+    second: Neck.1
+  - first:
+      4: 400064
+    second: Neck.2
+  - first:
+      4: 400066
+    second: Pelvis
+  - first:
+      4: 400068
+    second: Root
+  - first:
+      4: 400070
+    second: SecondEyelid_L
+  - first:
+      4: 400072
+    second: SecondEyelid_R
+  - first:
+      4: 400074
+    second: Spine
+  - first:
+      4: 400076
+    second: Tail.1
+  - first:
+      4: 400078
+    second: Toe_L.3
+  - first:
+      4: 400080
+    second: Toe_R.3
+  - first:
+      4: 400082
+    second: Tongue.1
+  - first:
+      4: 400084
+    second: Tongue.3
+  - first:
+      4: 400086
+    second: UpperArm_L
+  - first:
+      4: 400088
+    second: UpperArm_R
+  - first:
+      43: 4300000
+    second: GreenSeaTurtle
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: GreenSeaTurtle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 13b61fd7507544e208cf95adad0b13a5, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
-    importBlendShapes: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
-    keepQuads: 0
+    keepQuads: 1
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
+    normalSmoothAngle: 61
     normalImportMode: 0
     tangentImportMode: 1
+    normalCalculationMode: 2
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
