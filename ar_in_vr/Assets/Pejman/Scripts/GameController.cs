@@ -8,7 +8,7 @@ using System;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject canvas;
+    private GameObject billboard;
     [SerializeField]
     private TextMeshProUGUI canvasText;
     [SerializeField]
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         turtle = turtleController.gameObject;
 
         //turtle.SetActive(false);
-        canvas.SetActive(true);
+        billboard.SetActive(true);
 
         userControls = new UserControls();
 
@@ -91,9 +91,9 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void DisplayUI()
     {
-        canvas.SetActive(true);
+        billboard.SetActive(true);
         canvasButton.SetActive(false);
-        canvasText.text = "Please remove HMD and speak to the moderator";
+        canvasText.text = "Please remove HMD and speak to moderator";
         if(index < clips.Length)
         {
             StartCoroutine(ChangeUI());
@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(20);
         canvasButton.SetActive(true);
-        canvasText.text = "Click Next to view clip";
+        canvasText.text = "Click 'Next' to view clip";
     }
 
     /// <summary>
@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void PlayNextCondition()
     {
-        canvas.SetActive(false);
+        billboard.SetActive(false);
 
         Debug.Log("Playing Latin sequence: " + playOrder[index]);
 
