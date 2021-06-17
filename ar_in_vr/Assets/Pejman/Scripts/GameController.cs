@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using TMPro;
+using System;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField]
     private GameObject canvas;
+    [SerializeField]
+    private TextMeshProUGUI canvasText;
+    [SerializeField]
+    private GameObject canvasButton;
     [SerializeField]
     private VideoPlayer videoPlayer;
 
@@ -49,10 +55,10 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-        index = 0;
+        //index = 0;
         videoPlayer.loopPointReached += EndReached;
 
-        CreatePlayOrder();
+        CreateAnimationOrder();
 
         Debug.Log("Sequence order: ");
         foreach (int s in playOrder)
@@ -73,12 +79,37 @@ public class GameController : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         turtle.SetActive(false);
-        canvas.SetActive(true);
+        DisplayUI();
+  
         if (index >= clips.Length) //at end of the experiment
         {
             videoPlayer.Stop();
         }
     }
+    /// <summary>
+    /// display UI immediately after the clip is finished, to ask participants to remove HMD
+    /// </summary>
+    private void DisplayUI()
+    {
+        canvas.SetActive(true);
+        canvasButton.SetActive(false);
+        canvasText.text = "Please remove HMD and speak to the moderator";
+        if(index < clips.Length)
+        {
+            StartCoroutine(ChangeUI());
+        }
+    }
+    /// <summary>
+    /// while HMD is not worn, update UI. When the participant wears HMD they see new message with button to click
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ChangeUI()
+    {
+        yield return new WaitForSeconds(20);
+        canvasButton.SetActive(true);
+        canvasText.text = "Click Next to view clip";
+    }
+
     /// <summary>
     /// UI button triggers this function
     /// </summary>
@@ -90,7 +121,7 @@ public class GameController : MonoBehaviour
 
         int currentSequence = playOrder[index] - 1; // -1 because the Latin square values are not zero-referenced.
 
-        videoPlayer.clip = clips[currentSequence];
+        videoPlayer.clip = clips[index];
         videoPlayer.Play();
 
         turtle.SetActive(true);
@@ -103,7 +134,7 @@ public class GameController : MonoBehaviour
     /// If we decide to let participants input their number then we need function to map >6 numbers to a 1-6 range.
     /// Selects the correct animation sequence based on a Latin square (see study protocol)
     /// </summary>
-    void CreatePlayOrder()
+    void CreateAnimationOrder()
     {
         switch (LatinRow)
         {

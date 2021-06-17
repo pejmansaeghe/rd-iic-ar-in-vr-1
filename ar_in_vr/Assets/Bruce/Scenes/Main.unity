@@ -749,6 +749,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayNextCondition
       objectReference: {fileID: 0}
+    - target: {fileID: 8792399963565546610, guid: 11a938a5155740d46ba5b6bdb7a31730,
+        type: 3}
+      propertyPath: m_text
+      value: Click Next to view clip
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792399963565546610, guid: 11a938a5155740d46ba5b6bdb7a31730,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -4.9040794
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792399963565546610, guid: 11a938a5155740d46ba5b6bdb7a31730,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -73.16899
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792399963565546611, guid: 11a938a5155740d46ba5b6bdb7a31730,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8792399963755683611, guid: 11a938a5155740d46ba5b6bdb7a31730,
         type: 3}
       propertyPath: m_Pivot.x
@@ -787,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 8792399963755683611, guid: 11a938a5155740d46ba5b6bdb7a31730,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8792399963755683611, guid: 11a938a5155740d46ba5b6bdb7a31730,
         type: 3}
@@ -868,6 +888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792399964283510114, guid: 11a938a5155740d46ba5b6bdb7a31730,
+        type: 3}
+      propertyPath: m_text
+      value: Next
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a938a5155740d46ba5b6bdb7a31730, type: 3}
@@ -3600,6 +3625,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828819352}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &834372915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8792399963565546610, guid: 11a938a5155740d46ba5b6bdb7a31730,
+    type: 3}
+  m_PrefabInstance: {fileID: 98609802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &840291087
 GameObject:
   m_ObjectHideFlags: 0
@@ -4266,7 +4303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1207350206
 Transform:
   m_ObjectHideFlags: 0
@@ -6024,6 +6061,12 @@ MonoBehaviour:
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
+--- !u!1 &1719305910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8792399963402729307, guid: 11a938a5155740d46ba5b6bdb7a31730,
+    type: 3}
+  m_PrefabInstance: {fileID: 98609802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1736744620
 GameObject:
   m_ObjectHideFlags: 0
@@ -6928,16 +6971,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 558325351}
+  canvasText: {fileID: 834372915}
+  canvasButton: {fileID: 1719305910}
   videoPlayer: {fileID: 723342931}
   turtleController: {fileID: 391993727}
-  LatinRow: 2
+  LatinRow: 1
   clips:
-  - {fileID: 32900000, guid: 3c221892fb4099a46bc629dc7d6137ea, type: 3}
-  - {fileID: 32900000, guid: 6545758f74221ad44ae88c0d5d39c30c, type: 3}
-  - {fileID: 32900000, guid: 47e55c6c6d864444aaa5abd046b3cf24, type: 3}
-  - {fileID: 32900000, guid: 59117525f90fc88409bf787b5c832dcf, type: 3}
-  - {fileID: 32900000, guid: 5e3c324fd428f294093f7296c23e0e7a, type: 3}
-  - {fileID: 32900000, guid: 470d7baf552567347a6080bc63fac7cf, type: 3}
+  - {fileID: 32900000, guid: 3f68ead4720855547979e9d906ba6a09, type: 3}
+  - {fileID: 32900000, guid: 824babd7f0dd63a4693db0622f7d6fd8, type: 3}
+  - {fileID: 32900000, guid: 7caa129d8fbb78f449afe8dd220a2227, type: 3}
+  - {fileID: 32900000, guid: fd72b186b95f75a40bb4e4c36bf970ff, type: 3}
+  - {fileID: 32900000, guid: a05d32ec586351d4ebe9e48f56149d54, type: 3}
+  - {fileID: 32900000, guid: 5499cbc1d3ac8cc459be733920274c0a, type: 3}
   startAnimFrame: 50
 --- !u!4 &2085419113
 Transform:
