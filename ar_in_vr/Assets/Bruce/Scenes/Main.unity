@@ -8957,7 +8957,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fbd89dc9457236142966cba1329de04c, type: 2}
+      objectReference: {fileID: 2100000, guid: 13b61fd7507544e208cf95adad0b13a5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efd0936a30526848805409897835f7a, type: 3}
 --- !u!33 &7361675275124855529
@@ -9177,6 +9177,8 @@ MonoBehaviour:
   depthBlendMaterial: {fileID: 2100000, guid: a627ed048f349c845a75f5238c66b196, type: 2}
   ARCamera: {fileID: 7840499273565757598}
   ARDepthCamera: {fileID: 7840499273272443058}
+  ARFov: 45
+  alpha: 1
 --- !u!20 &7840499272836318110
 Camera:
   m_ObjectHideFlags: 0

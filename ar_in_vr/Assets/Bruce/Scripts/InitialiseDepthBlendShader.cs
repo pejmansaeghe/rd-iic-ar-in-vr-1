@@ -9,6 +9,11 @@ public class InitialiseDepthBlendShader : MonoBehaviour
     public Camera ARCamera;
     public Camera ARDepthCamera;
 
+    public float ARFov = 45;
+    public float alpha = .8f;
+
+    private Camera activeCamera;
+
     RenderTexture ARRenderTexture;
     RenderTexture ARDepthRenderTexture;
     void Awake()
@@ -21,11 +26,17 @@ public class InitialiseDepthBlendShader : MonoBehaviour
 
         depthBlendMaterial.SetTexture("_SecondCameraTexture", ARRenderTexture);
         depthBlendMaterial.SetTexture("_SecondCameraDepthTexture", ARDepthRenderTexture);
+
+        activeCamera = Camera.main;
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //
-    //  }
+    void Update()
+    {
+        float fovProportion = Mathf.Tan(ARFov * Mathf.Deg2Rad / 2f) / Mathf.Tan(activeCamera.fieldOfView * Mathf.Deg2Rad / 2);
+
+        float edgePosition = 0.5f - (0.5f * fovProportion);
+
+        depthBlendMaterial.SetFloat("_EdgeBoundary", edgePosition);
+        depthBlendMaterial.SetFloat("_Alpha", alpha);
+    }
 }
