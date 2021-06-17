@@ -5,6 +5,7 @@
         _MainTex ("Main Texture", 2D) = "white" {}
         _SecondCameraTexture ("Second Texture", 2D) = "white" {}
         _SecondCameraDepthTexture ( "Second camera depth", 2D) = "black" {}
+        _Alpha ("Alpha", float) = 1
     }
     SubShader
     {
@@ -44,6 +45,8 @@
             sampler2D _SecondCameraDepthTexture;
             sampler2D _SecondCameraTexture;
 
+            float _Alpha;
+
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col;// = tex2D(_SecondCameraTexture, i.uv);
@@ -54,14 +57,14 @@
                 float mainDepth = tex2D(_CameraDepthTexture, i.uv);
                 float secondDepth = tex2D(_SecondCameraDepthTexture, i.uv);
                 
-                if(mainDepth > secondDepth)
+                if(mainDepth >= secondDepth)
                 {
                     col = tex2D(_MainTex, i.uv);
                 }
                 else
                 {
                     //col = fixed4(1, 0, 0, 1);
-                    col = (.6 * tex2D(_SecondCameraTexture, i.uv)) + (0.4 * tex2D(_MainTex, i.uv));
+                    col = (_Alpha * tex2D(_SecondCameraTexture, i.uv)) + ((1.0-_Alpha) * tex2D(_MainTex, i.uv));
                 }
 
                 return col;

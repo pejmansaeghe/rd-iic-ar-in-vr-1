@@ -18,5 +18,7 @@ public class MatchCameraParameters : MonoBehaviour
         cam.fieldOfView = cameraToMatch.fieldOfView;
         cam.nearClipPlane = cameraToMatch.nearClipPlane;
         cam.farClipPlane = cameraToMatch.farClipPlane;
+        transform.position = cameraToMatch.transform.position;
+        transform.rotation = cameraToMatch.transform.rotation;
     }
 }
