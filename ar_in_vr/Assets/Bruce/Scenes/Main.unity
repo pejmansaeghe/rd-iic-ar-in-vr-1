@@ -1280,7 +1280,7 @@ PrefabInstance:
     - target: {fileID: 2558471001345802618, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.925
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2558471001345802618, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
@@ -1330,7 +1330,7 @@ PrefabInstance:
     - target: {fileID: 2558471002613562862, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59d247d80f302304186e0ea6c9342a57, type: 3}
@@ -6593,12 +6593,12 @@ MonoBehaviour:
   turtleController: {fileID: 391993727}
   LatinRow: 6
   clips:
-  - {fileID: 32900000, guid: 3f68ead4720855547979e9d906ba6a09, type: 3}
-  - {fileID: 32900000, guid: 824babd7f0dd63a4693db0622f7d6fd8, type: 3}
-  - {fileID: 32900000, guid: 7caa129d8fbb78f449afe8dd220a2227, type: 3}
-  - {fileID: 32900000, guid: fd72b186b95f75a40bb4e4c36bf970ff, type: 3}
-  - {fileID: 32900000, guid: a05d32ec586351d4ebe9e48f56149d54, type: 3}
-  - {fileID: 32900000, guid: 5499cbc1d3ac8cc459be733920274c0a, type: 3}
+  - {fileID: 32900000, guid: 3c221892fb4099a46bc629dc7d6137ea, type: 3}
+  - {fileID: 32900000, guid: 6545758f74221ad44ae88c0d5d39c30c, type: 3}
+  - {fileID: 32900000, guid: 47e55c6c6d864444aaa5abd046b3cf24, type: 3}
+  - {fileID: 32900000, guid: 59117525f90fc88409bf787b5c832dcf, type: 3}
+  - {fileID: 32900000, guid: 5e3c324fd428f294093f7296c23e0e7a, type: 3}
+  - {fileID: 32900000, guid: 470d7baf552567347a6080bc63fac7cf, type: 3}
   startAnimFrame: 5
 --- !u!4 &2085419113
 Transform:
@@ -9256,7 +9256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7840499272836318109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9357,7 +9357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &7840499273272443058
 Camera:
   m_ObjectHideFlags: 0
@@ -9564,7 +9564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7980364500054029665
 GameObject:
   m_ObjectHideFlags: 0

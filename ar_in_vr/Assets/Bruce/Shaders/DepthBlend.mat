@@ -33,5 +33,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Alpha: 0.9
-    - _EdgeBoundary: -0.36602545
+    - _EdgeBoundary: 0.16099486
     m_Colors: []
