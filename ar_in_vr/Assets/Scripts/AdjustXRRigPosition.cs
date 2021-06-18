@@ -68,6 +68,11 @@ public class AdjustXRRigPosition : MonoBehaviour
         {
             gameObject.transform.position = initialRigPosition;
         };
+
+        userControls.SetUp.Quit.performed += _ =>
+        {
+            Application.Quit();
+        };
     }
 
     void OnEnable()

@@ -73,6 +73,14 @@ public class @UserControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""ddae7044-300d-4115-9983-20f7fa0900da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -150,6 +158,17 @@ public class @UserControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MoveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66b6d8cf-4413-4ea7-8295-7bd37b683331"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -240,6 +259,7 @@ public class @UserControls : IInputActionCollection, IDisposable
         m_SetUp_MoveLeft = m_SetUp.FindAction("MoveLeft", throwIfNotFound: true);
         m_SetUp_MoveUp = m_SetUp.FindAction("MoveUp", throwIfNotFound: true);
         m_SetUp_MoveDown = m_SetUp.FindAction("MoveDown", throwIfNotFound: true);
+        m_SetUp_Quit = m_SetUp.FindAction("Quit", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_UIButtonClick = m_UI.FindAction("UI Button Click", throwIfNotFound: true);
@@ -303,6 +323,7 @@ public class @UserControls : IInputActionCollection, IDisposable
     private readonly InputAction m_SetUp_MoveLeft;
     private readonly InputAction m_SetUp_MoveUp;
     private readonly InputAction m_SetUp_MoveDown;
+    private readonly InputAction m_SetUp_Quit;
     public struct SetUpActions
     {
         private @UserControls m_Wrapper;
@@ -314,6 +335,7 @@ public class @UserControls : IInputActionCollection, IDisposable
         public InputAction @MoveLeft => m_Wrapper.m_SetUp_MoveLeft;
         public InputAction @MoveUp => m_Wrapper.m_SetUp_MoveUp;
         public InputAction @MoveDown => m_Wrapper.m_SetUp_MoveDown;
+        public InputAction @Quit => m_Wrapper.m_SetUp_Quit;
         public InputActionMap Get() { return m_Wrapper.m_SetUp; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -344,6 +366,9 @@ public class @UserControls : IInputActionCollection, IDisposable
                 @MoveDown.started -= m_Wrapper.m_SetUpActionsCallbackInterface.OnMoveDown;
                 @MoveDown.performed -= m_Wrapper.m_SetUpActionsCallbackInterface.OnMoveDown;
                 @MoveDown.canceled -= m_Wrapper.m_SetUpActionsCallbackInterface.OnMoveDown;
+                @Quit.started -= m_Wrapper.m_SetUpActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_SetUpActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_SetUpActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_SetUpActionsCallbackInterface = instance;
             if (instance != null)
@@ -369,6 +394,9 @@ public class @UserControls : IInputActionCollection, IDisposable
                 @MoveDown.started += instance.OnMoveDown;
                 @MoveDown.performed += instance.OnMoveDown;
                 @MoveDown.canceled += instance.OnMoveDown;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -456,6 +484,7 @@ public class @UserControls : IInputActionCollection, IDisposable
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnMoveUp(InputAction.CallbackContext context);
         void OnMoveDown(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
