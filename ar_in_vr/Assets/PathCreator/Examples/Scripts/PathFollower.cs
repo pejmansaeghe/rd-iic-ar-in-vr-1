@@ -9,6 +9,7 @@ namespace PathCreation.Examples
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
+        public float ASmallAmount;
         float distanceTravelled;
 
         void Start()
@@ -26,10 +27,19 @@ namespace PathCreation.Examples
             if (pathCreator != null)
             {
                 distanceTravelled += speed * Time.deltaTime;
+                Vector3 currentPosition = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
+                Vector3 nextPosition = pathCreator.path.GetPointAtDistance(distanceTravelled + ASmallAmount, endOfPathInstruction);
+                Vector3 heading = nextPosition - currentPosition;
+                transform.LookAt(transform.position + heading);
+
+              
+
+                // the second argument, upwards, defaults to Vector3.up
+                //Quaternion rotation = Quaternion.LookRotation(heading);
+                //transform.rotation = rotation;
+
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
-
-
+                //transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
             }
         }
 

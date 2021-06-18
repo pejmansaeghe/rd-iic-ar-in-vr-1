@@ -32,6 +32,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Alpha: 1
-    - _EdgeBoundary: 0.14128053
+    - _Alpha: 0.9
+    - _EdgeBoundary: -0.36602545
     m_Colors: []
