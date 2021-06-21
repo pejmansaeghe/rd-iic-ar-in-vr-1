@@ -1275,17 +1275,17 @@ PrefabInstance:
     - target: {fileID: 2558471001345802618, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.181
+      value: 9.598
       objectReference: {fileID: 0}
     - target: {fileID: 2558471001345802618, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.879
       objectReference: {fileID: 0}
     - target: {fileID: 2558471001345802618, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.006
+      value: -3.182
       objectReference: {fileID: 0}
     - target: {fileID: 2558471001345802618, guid: 59d247d80f302304186e0ea6c9342a57,
         type: 3}
@@ -6608,15 +6608,15 @@ MonoBehaviour:
   canvasButton: {fileID: 1719305910}
   videoPlayer: {fileID: 723342931}
   turtleController: {fileID: 391993727}
-  LatinRow: 6
+  LatinRow: 2
   clips:
-  - {fileID: 32900000, guid: 3c221892fb4099a46bc629dc7d6137ea, type: 3}
-  - {fileID: 32900000, guid: 6545758f74221ad44ae88c0d5d39c30c, type: 3}
-  - {fileID: 32900000, guid: 47e55c6c6d864444aaa5abd046b3cf24, type: 3}
-  - {fileID: 32900000, guid: 59117525f90fc88409bf787b5c832dcf, type: 3}
-  - {fileID: 32900000, guid: 5e3c324fd428f294093f7296c23e0e7a, type: 3}
-  - {fileID: 32900000, guid: 470d7baf552567347a6080bc63fac7cf, type: 3}
-  startAnimFrame: 5
+  - {fileID: 32900000, guid: 906d41958603f494d9ff28e90b7c9a74, type: 3}
+  - {fileID: 32900000, guid: 5d9ab296509fcd246bcf88b507227d5a, type: 3}
+  - {fileID: 32900000, guid: ed12229bfd073f247abe82fb6d47e4a3, type: 3}
+  - {fileID: 32900000, guid: 7d56903097bdd994c9b5f84000a28c58, type: 3}
+  - {fileID: 32900000, guid: 2dd927bb4e2bb5542adf8c8098ea4414, type: 3}
+  - {fileID: 32900000, guid: 1f003114596488c4aacb07c83b535098, type: 3}
+  animationDelaySecs: 8
 --- !u!4 &2085419113
 Transform:
   m_ObjectHideFlags: 0
@@ -8940,6 +8940,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7216812557527888989, guid: 6efd0936a30526848805409897835f7a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7216812557527888989, guid: 6efd0936a30526848805409897835f7a,
         type: 3}
       propertyPath: pathCreator
