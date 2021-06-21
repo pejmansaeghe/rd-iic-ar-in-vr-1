@@ -5,24 +5,19 @@ using UnityEngine;
 public class ARShaderControl : MonoBehaviour
 {
 
-    public Shader ARShader;
-
     public float ARFov = 45;
     public float ARAlpha = 0.8f;
-    SkinnedMeshRenderer meshRenderer;
+    Renderer meshRenderer;
     Material arMaterial;
     Camera activeCamera;
     void Awake()
     {
-        meshRenderer = GetComponent<SkinnedMeshRenderer>();
+        meshRenderer = GetComponent<Renderer>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        // arMaterial = new Material(ARShader);
-
-        // meshRenderer.sharedMaterial = arMaterial;
-
+        arMaterial = meshRenderer.sharedMaterial;
         activeCamera = Camera.main;
         arMaterial = meshRenderer.material;
     }

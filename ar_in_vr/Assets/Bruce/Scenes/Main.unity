@@ -4994,8 +4994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e8cc374dae86842b2a50664a0826f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ARShader: {fileID: -6465566751694194690, guid: 2e17e6fff848d2c479b26de9c6a3e778,
-    type: 3}
   ARFov: 100
   ARAlpha: 0.9
 --- !u!1 &1531737711
@@ -6017,7 +6015,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2fdafbcdeb25ee0419eaa51991171d6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9076,7 +9074,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 23e655c167401424796f3bccf4aa8c8a, type: 2}
+      objectReference: {fileID: 2100000, guid: cda1160b4d071db468a469521efbd9d9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efd0936a30526848805409897835f7a, type: 3}
 --- !u!33 &7361675275124855529
