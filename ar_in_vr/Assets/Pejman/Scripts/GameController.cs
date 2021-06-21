@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
 using System;
+using PathCreation.Examples;
 
 public class GameController : MonoBehaviour
 {
@@ -18,14 +19,18 @@ public class GameController : MonoBehaviour
 
     public TurtleController turtleController;
     private GameObject turtle;
+    private PathFollower pathFollower;
+
+  
 
     [Range(1, 6)]
     [SerializeField]
     private int LatinRow; // don't change while in Play mode
     [SerializeField]
     private VideoClip[] clips;
+    [Range(1, 20)]
     [SerializeField]
-    private int startAnimFrame = 50;
+    private int animationDelaySecs = 5;
 
     // decides which video and animation will be played next; starts from 0 and goes up to 5
     private int index = 0;
@@ -41,6 +46,10 @@ public class GameController : MonoBehaviour
     {
 
         turtle = turtleController.gameObject;
+        turtle.SetActive(false);
+
+        pathFollower = turtleController.GetComponent<PathFollower>();
+        pathFollower.enabled = false;
 
         //turtle.SetActive(false);
         billboard.SetActive(true);
@@ -124,11 +133,21 @@ public class GameController : MonoBehaviour
         videoPlayer.clip = clips[index];
         videoPlayer.Play();
 
-        turtle.SetActive(true);
-        turtleController.StartPathIndex(currentSequence);
+        StartCoroutine(StartPathFollowerAnimation(currentSequence));
+
+
 
         index += 1;
     }
+
+    IEnumerator StartPathFollowerAnimation(int currentSequence)
+    {
+        yield return new WaitForSeconds(animationDelaySecs);
+        pathFollower.enabled = true;
+        turtle.SetActive(true);
+        turtleController.StartPathIndex(currentSequence);
+    }
+
     /// <summary>
     /// Set animation based on participant number; only 6 unique rows in the Latin square; participant 7 in the study will see what participant 1 saw.
     /// If we decide to let participants input their number then we need function to map >6 numbers to a 1-6 range.
