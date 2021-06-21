@@ -66,7 +66,6 @@ public class TurtleController : MonoBehaviour
 
     void LateUpdate()
     {
-
         animator.SetBool("TurtleIdle", TurtleStationary());
 
         previousPosition = transform.position;
@@ -74,7 +73,7 @@ public class TurtleController : MonoBehaviour
 
     private bool TurtleStationary()
     {
-        return Vector3.Distance(previousPosition, transform.position) == 0;
+        return Vector3.Distance(previousPosition, transform.position) <= 0.001f;
     }
 
     void OnTriggerEnter(Collider other)
