@@ -6500,12 +6500,12 @@ MonoBehaviour:
   turtleController: {fileID: 391993727}
   LatinRow: 2
   clips:
-  - {fileID: 32900000, guid: 906d41958603f494d9ff28e90b7c9a74, type: 3}
-  - {fileID: 32900000, guid: 5d9ab296509fcd246bcf88b507227d5a, type: 3}
-  - {fileID: 32900000, guid: ed12229bfd073f247abe82fb6d47e4a3, type: 3}
-  - {fileID: 32900000, guid: 7d56903097bdd994c9b5f84000a28c58, type: 3}
-  - {fileID: 32900000, guid: 2dd927bb4e2bb5542adf8c8098ea4414, type: 3}
-  - {fileID: 32900000, guid: 1f003114596488c4aacb07c83b535098, type: 3}
+  - {fileID: 32900000, guid: 3c221892fb4099a46bc629dc7d6137ea, type: 3}
+  - {fileID: 32900000, guid: 6545758f74221ad44ae88c0d5d39c30c, type: 3}
+  - {fileID: 32900000, guid: 47e55c6c6d864444aaa5abd046b3cf24, type: 3}
+  - {fileID: 32900000, guid: 59117525f90fc88409bf787b5c832dcf, type: 3}
+  - {fileID: 32900000, guid: 5e3c324fd428f294093f7296c23e0e7a, type: 3}
+  - {fileID: 32900000, guid: 470d7baf552567347a6080bc63fac7cf, type: 3}
   animationDelaySecs: 8
 --- !u!4 &2085419113
 Transform:

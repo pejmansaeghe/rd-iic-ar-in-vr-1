@@ -19,8 +19,6 @@ public class TurtleController : MonoBehaviour
 
     Vector3 previousPosition;
 
-    bool followingPath = false;
-
     void Awake()
     {
         pathFollower = GetComponent<PathFollower>();
@@ -64,19 +62,19 @@ public class TurtleController : MonoBehaviour
         pathFollower.pathCreator = paths[idx];
 
         previousPosition = transform.position;
-        followingPath = true;
     }
 
     void LateUpdate()
     {
-        if (followingPath && Vector3.Distance(previousPosition, transform.position) < 1e-6)
-        {
-            Debug.Log("End of path reached");
-            followingPath = false;
-            animator.SetBool("TurtleIdle", true);
-        }
+
+        animator.SetBool("TurtleIdle", TurtleStationary());
 
         previousPosition = transform.position;
+    }
+
+    private bool TurtleStationary()
+    {
+        return Vector3.Distance(previousPosition, transform.position) == 0;
     }
 
     void OnTriggerEnter(Collider other)
