@@ -19,6 +19,8 @@ public class TurtleController : MonoBehaviour
 
     Vector3 previousPosition;
 
+    bool nearCoffeeTable = false;
+
     void Awake()
     {
         pathFollower = GetComponent<PathFollower>();
@@ -66,7 +68,7 @@ public class TurtleController : MonoBehaviour
 
     void LateUpdate()
     {
-        animator.SetBool("TurtleIdle", TurtleStationary());
+        animator.SetBool("TurtleIdle", TurtleStationary() || nearCoffeeTable);
 
         previousPosition = transform.position;
     }
@@ -78,11 +80,13 @@ public class TurtleController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        animator.SetBool("TurtleIdle", true);
+        nearCoffeeTable = true;
+
     }
 
-    void OnTriggerExist(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        animator.SetBool("TurtleIdle", false);
+        nearCoffeeTable = false;
+
     }
 }

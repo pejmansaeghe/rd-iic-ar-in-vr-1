@@ -6498,7 +6498,7 @@ MonoBehaviour:
   canvasButton: {fileID: 1719305910}
   videoPlayer: {fileID: 723342931}
   turtleController: {fileID: 391993727}
-  LatinRow: 2
+  LatinRow: 1
   clips:
   - {fileID: 32900000, guid: 3c221892fb4099a46bc629dc7d6137ea, type: 3}
   - {fileID: 32900000, guid: 6545758f74221ad44ae88c0d5d39c30c, type: 3}
