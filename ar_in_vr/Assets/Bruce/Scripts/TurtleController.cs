@@ -45,6 +45,17 @@ public class TurtleController : MonoBehaviour
     void OnEnable()
     {
         userControls.Debug.Enable();
+        StartCoroutine(ActivateRenderer());
+    }
+
+    IEnumerator ActivateRenderer()
+    {
+        var renderer = GetComponentInChildren<Renderer>();
+        renderer.enabled = false;
+
+        yield return new WaitForEndOfFrame();
+        renderer.enabled = true;
+
     }
 
     void OnDisable()
